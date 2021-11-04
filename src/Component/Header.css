@@ -15,13 +15,13 @@
 }
 .header__search{
     display: flex;
-    flex: 1;
+    flex: 1; 
     align-items: center;
     border-radius: 24px;
-    max-width: 70%;
+    width: 100%;
 }
 .header__searchInput{
-    height: 12px;
+    height: 14px;
     padding: 10px;
     border: none;
     width: 100%;
@@ -39,9 +39,14 @@
 .header__option{
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     color: white;
+    padding: 2px;
+    border: 1px solid #131921;
+}
+.header__option:hover{
+    border: 1px solid white;
 }
 .header__optionLine1{
     font-size: 10px;
@@ -56,10 +61,119 @@
     align-items: center;
     color: white;
     margin-right: 10px;
-    margin-left: 10px;
+    margin-left: 5px;
+    border: 1px solid #131921;
+    padding: 2px;
+}
+.header__optionBasket:hover{
+    border: 1px solid white;
 }
 .header__cartCount{
     font-size: 12px;
     font-weight: 800;
     color: #cd9042;
 }
+@media (max-width:767px){
+    .header{
+        display: none;
+    }
+}
+@media (min-width:768px){
+    .sidepanel__container{
+        display: none;
+    }
+}
+
+.sidepanel {
+    height: 100%;
+    width: 0; 
+    position: fixed; 
+    z-index: 100; 
+    top: 0;
+    left: 0;
+    background-color: #131921;
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.1s; 
+  }
+
+  .sidepanel a:hover {
+    color: #f1f1f1;
+  }
+  /* NavLink is converted to <a> tag */
+ 
+  .sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #131921;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
+ 
+  .openbtn__container{
+    background-color: #131921;
+    display: flex;
+    justify-content: space-between;
+   padding: 5px 0;
+}
+
+  .openbtn__container__icon{
+    width: 100px;
+    object-fit: contain;
+   margin-top: 12px;
+}
+.openbtn__header__optionBasket{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 5px
+    
+}
+.sidepanel__heading{
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: 18px;
+    margin-bottom: 20px;
+}
+
+.sidepanel a {
+    margin-top: 10px;
+    text-decoration: none;
+    color: #818181;
+  }
+ 
+.sidepanel__container .sidepanel__optionLine{
+    font-size: 16px;
+    font-weight: 700;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    color: #818181;
+    display: block;
+}
+.sidepanel__container{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.sidepanel__container .header__search{
+    margin: 0 20px;
+}
+

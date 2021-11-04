@@ -1,0 +1,51 @@
+.payment{
+    background-color: white;
+    padding-bottom: 100px;
+    width: 100%;
+}
+
+.payment__container > h1{
+    text-align: center;
+    padding: 10px;
+    font-weight: 400;
+    background-color: rgb(234, 237, 237);
+    border-bottom: 1px solid lightgrey;
+}
+.payment__item .checkoutProduct:hover{
+    border-radius: 0;
+    box-shadow: none;
+}
+.payment__container > h1  a{
+    text-decoration: none;
+    color: black;
+}
+.payment__section{
+    display: flex;
+    padding: 20px;
+    margin: 0 20px;
+    border-bottom: 1px solid lightgrey;
+}
+@media(max-width:991px){
+    .payment__section{
+        flex-direction: column;
+    }
+}
+.payment__title{
+    flex: 20%;
+}
+.payment__address{
+    margin-left: 30px;
+}
+.payment__address,.payment__item{
+    flex: 80%;
+}
+.payment__button{
+    background-color: #f0c14b;
+    border-radius: 2px;
+    width: 25%;
+    height: 40px;
+    border:1px solid;
+    border-color: #d89734 #9c7e31 #846a29;
+    display: block;
+   margin: 20px auto;
+}

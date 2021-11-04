@@ -1,0 +1,20 @@
+.order{
+    margin: 20px;  
+}
+.order .checkoutProduct button{
+    display: none;
+}
+.order .checkoutProduct:hover{
+    box-shadow: none;
+    border-radius: 0;
+}
+.order__id h3{
+    margin: 0px auto 5px 40px;
+}
+.order__id p{
+    margin: 0px auto 5px 40px;
+}
+
+.order__list{
+    margin: 20px;
+}

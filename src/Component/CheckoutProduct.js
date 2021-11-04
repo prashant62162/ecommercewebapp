@@ -2,6 +2,8 @@ import React from 'react';
 import StarIcon from '@mui/icons-material/Star';
 import './CheckoutProduct.css';
 import { useStateValue } from '../Store/StateProvider';
+import { Rating } from '@mui/material';
+import CurrencyFormat from 'react-currency-format';
 function CheckoutProduct(props) {
     const [{ basket }, dispatch] = useStateValue();
     const removeProduct = () => {
@@ -14,10 +16,29 @@ function CheckoutProduct(props) {
         <div className="checkoutProduct" >
             <img className="checkoutProduct__image" src={props.img} />
             <div className="checkoutProduct__info">
-                <p className="checkoutProduct__title">{props.title}</p>
-                <p><small>$</small><strong>{props.price}</strong></p>
-                <div className="checkoutProduct__rating">
-                    {Array(props.rating).fill().map(() => <StarIcon className="stars" />)}
+                <div>
+                    <p className="checkoutProduct__title">{props.title}</p>
+                    {/* <p><small>₹</small><strong>{value}</strong></p> */}
+                    <CurrencyFormat
+                        renderText={(value) => (
+                            <>
+                                <p>
+                                    <strong> {value} </strong>
+                                </p>
+                            </>
+                        )}
+                        decimalScale={2}
+                        value={props.price}
+                        displayType={'text'}
+                        thousandSeparator={true}
+                        prefix={"₹"}
+                    />
+                    <div className="checkoutProduct__rating">
+                        <Rating
+                            value={props.rating}
+                            precision={0.1}
+                        />
+                    </div>
                 </div>
                 <button onClick={removeProduct}>Remove from Basket</button>
             </div>

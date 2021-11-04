@@ -1,7 +1,13 @@
 *{
   margin: 0;
+  
 }
-
+button {
+  cursor: pointer;
+}
+button:active {
+  transform: translateY(1px);
+}
 body {
   background-color: rgba(234, 237, 237);
   margin: 0;
@@ -10,6 +16,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
 }
 
 code {

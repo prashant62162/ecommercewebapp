@@ -2,6 +2,11 @@ export const initialState = {
     basket: [],
     user: null
 };
+export const getBasketTotal = (basket) => {
+    const subTotal = basket?.reduce((acc, item) => acc + item.price, 0);
+    return subTotal;
+}
+export const userId = (userState) => { return userState.providerData[0].uid };
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -10,6 +15,11 @@ const reducer = (state, action) => {
                 ...state,
                 basket: [...state.basket, action.item]
             };
+        case "EMPTY_BASKET":
+            return {
+                ...state,
+                basket: []
+            }
         case "REMOVE_FROM_BASKET":
             const index = state.basket.findIndex(basketItem => basketItem.id === action.id);
             let newBasket = [...state.basket];

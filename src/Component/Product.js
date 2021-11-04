@@ -1,7 +1,8 @@
 import React from 'react';
-import './Product.css'
-import StarIcon from '@mui/icons-material/Star';
+import './Product.css';
+import { Rating } from '@mui/material';
 import { useStateValue } from '../Store/StateProvider'
+import CurrencyFormat from 'react-currency-format';
 function Product(props) {
     const [state, dispatch] = useStateValue();
 
@@ -22,9 +23,26 @@ function Product(props) {
         <div className="product">
             <div className="product__info">
                 <p>{props.title}</p>
-                <p className="product__price"> <small>₹</small> <strong>{props.price}</strong> </p>
+                <p className="product__price">
+                    <CurrencyFormat
+                        renderText={(value) => (
+                            <>
+                                <p>
+                                    <strong> {value} </strong>
+                                </p>
+                            </>
+                        )}
+                        decimalScale={2}
+                        value={props.price}
+                        displayType={'text'}
+                        thousandSeparator={true}
+                        prefix={"₹"}
+                    /> </p>
                 <div className="product__rating">
-                    {Array(props.rating).fill().map(() => <StarIcon className="stars" />)}
+                    <Rating
+                        value={props.rating}
+                        precision={0.1}
+                    />
                 </div>
             </div>
             <img src={props.imgsrc} alt="productimage" />

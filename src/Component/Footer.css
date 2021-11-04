@@ -1,0 +1,64 @@
+.footer{
+    padding: 20px 0 10px 0;
+    width: 100%;
+    color: white;
+    background-color: #232F3E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer__top{
+    width: 90%;
+    display: flex;
+    padding: 20px 0;
+    justify-content: space-around;
+}
+@media(max-width:991px){
+    .footer__help,.footer__makeMoney{
+        display: none;
+    }
+}
+.footer__top li{
+    list-style: none;
+    color: #DDD;
+    padding-bottom: 2px;
+}
+.footer__top ul{
+    padding-left: 0;
+}
+.footer__top h3{
+    margin-bottom: 5px;
+}
+.footer__bottom{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+.footer__logo{
+    text-align: center;
+    margin-top: 10px;
+}
+.footer__logo img{
+    width: 100px;
+}
+.country_list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    list-style: none;
+    padding-left: 0;
+    width: 80%;
+}
+.country_list li{
+    margin: 0 5px;
+}
+
+.footer__countries{
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+.footer__copyright{
+    margin-top: 10px;
+    text-align: center;
+}
