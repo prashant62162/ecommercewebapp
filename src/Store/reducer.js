@@ -1,6 +1,7 @@
 export const initialState = {
     basket: [],
-    user: null
+    user: null,
+    product_d: null,
 };
 export const getBasketTotal = (basket) => {
     const subTotal = basket?.reduce((acc, item) => acc + item.price, 0);
@@ -36,6 +37,11 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 user: action.user
+            };
+        case "SHOW_PRODUCT":
+            return {
+                ...state,
+                product_d: action.item
             };
         default:
             return state;

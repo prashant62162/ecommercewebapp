@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './Component/Header';
 import Home from './Component/Home';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Checkout from './Component/Checkout';
 import Login from './Component/Login';
 import { useEffect } from 'react';
@@ -10,10 +10,11 @@ import { useStateValue } from './Store/StateProvider';
 import Payment from './Component/Payment';
 import Footer from './Component/Footer';
 import Orders from './Component/Orders';
+import ProductDetail from './Component/ProductDetail';
 
 
 function App() {
-  const [{ }, dispatch] = useStateValue();
+  const [{ basket, user, product_d }, dispatch] = useStateValue();
 
 
   useEffect(() => {
@@ -33,7 +34,7 @@ function App() {
     })
   }, [])
   return (
-    < Router >
+    < BrowserRouter >
       <div className="App">
 
         <Switch>
@@ -50,6 +51,12 @@ function App() {
             <Orders />
             <Footer />
           </Route>
+          <Route exact path="/product/:product_d.id">
+            <Header />
+            {product_d ? <ProductDetail /> : <Home />
+            }
+            <Footer />
+          </Route>
 
           <Route exact path="/checkout">
             <Header />
@@ -64,7 +71,7 @@ function App() {
         </Switch>
 
       </div>
-    </Router >
+    </BrowserRouter >
   );
 }
 

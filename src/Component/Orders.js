@@ -6,9 +6,12 @@ import Order from './Order';
 function Orders() {
     const [{ basket, user }, dispatch] = useStateValue();
     const [orders, setOrders] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+
         if (user) {
+
             db.collection('users')
                 .doc(user?.uid)
                 .collection('orders')
@@ -18,17 +21,35 @@ function Orders() {
                         data: doc.data()
                     })))
                 ))
+
         } else {
             setOrders([])
         }
-
+        setLoading(false);
     }, [user]);
-    console.log(orders?.data)
+
+
+    let content = <h2 style={{ textAlign: "center" }}>Checking...</h2>
+
+    if (!user) {
+        content = <h2>Please Sign In!</h2>
+    } else {
+        content = !orders ? <h2>Loading Orders</h2> : !(orders.length) ? <h2>No Order Placed!</h2> : orders?.map(order => <Order productList={order} />)
+    }
+
+    //else if (!loading && !orders) {
+    //     content = <h2>No orders placed!</h2>
+    // } else if (!loading) {
+    //     content = !(orders.length) ? <h2>Loading Orders</h2> : orders?.map(order => <Order productList={order} />)
+    // }
+
+
+
     return (
         <div className="orders">
             <h1>Your Order History</h1>
             <div className="order__list">
-                {!(orders.length) ? <h2>No Order Placed!</h2> : orders?.map(order => <Order productList={order} />)}
+                {content}
             </div>
         </div>
     )

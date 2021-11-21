@@ -40,12 +40,14 @@
     flex: 80%;
 }
 .payment__button{
-    background-color: #f0c14b;
-    border-radius: 2px;
-    width: 25%;
-    height: 40px;
-    border:1px solid;
-    border-color: #d89734 #9c7e31 #846a29;
+    width: 300px;
+    background-color: #ffd814;
+    border:initial;
+    margin-top: 10px;
+    color: #111;
+    border-radius: 19px;
+    cursor: pointer;
+    padding: 10px;
     display: block;
    margin: 20px auto;
 }

@@ -21,6 +21,10 @@ box-shadow: rgb(84 89 94 / 40%) 0px 24px 34px 0px;
     width: 100%;
     object-fit: contain;
     margin-bottom: 15px;
+    transition: transform .4s;
+}
+.product > img:hover{
+    transform: scale(1.2);
 }
 .product__price{
     margin-top: 5px;
@@ -32,11 +36,12 @@ box-shadow: rgb(84 89 94 / 40%) 0px 24px 34px 0px;
     margin: 15px;
 }
 .product > button{
-    width: fit-content;
-    height: 30px;
-    background-color: #f0c14b;
-    border: 1px solid;
+    width: 150px;
+    background-color: #ffd814;
+    border:initial;
     margin-top: 10px;
-    border-color: #a88734 #9c7e31 #846a29;
     color: #111;
+    border-radius: 7px;
+    cursor: pointer;
+    padding: 10px;
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import StarIcon from '@mui/icons-material/Star';
 import './CheckoutProduct.css';
 import { useStateValue } from '../Store/StateProvider';
 import { Rating } from '@mui/material';
@@ -40,7 +39,7 @@ function CheckoutProduct(props) {
                         />
                     </div>
                 </div>
-                <button onClick={removeProduct}>Remove from Basket</button>
+                <button onClick={removeProduct}>Remove from Cart</button>
             </div>
         </div>
     )
